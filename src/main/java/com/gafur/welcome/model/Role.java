@@ -1,11 +1,18 @@
 package com.gafur.welcome.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
+/**
+ * Role entity
+ *
+ * @author igafurov
+ * @since 01.11.2016
+ */
 @Entity
 @Table(name = "role")
-public class Role {
+public class Role implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

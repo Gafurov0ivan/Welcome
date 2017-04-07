@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -16,8 +16,8 @@
 <div class="container">
     <form method="POST" action="${contextPath}/login" class="form-sign-in">
         <div class="form-group ${error != null ? 'has-error' : ''}">
-            <span class="message" > ${message}</span>
-            <input name="username" value="${cookieUserName}" type="text" class="form-control" placeholder="Username" />
+            <span class="message"> ${message}</span>
+            <input name="username" value="${cookieUserName}" type="text" class="form-control" placeholder="Username"/>
             <input name="password" type="password" class="form-control" placeholder="Password"/>
             <span>${error}</span>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

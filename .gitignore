@@ -1,3 +1,24 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.db
+rebel.xml
+
+# Directories #
+build/
+bin/
+target/
+libs/
+tmp/
+node_modules/
+
+######################
+# Windows
+######################
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -8,25 +29,17 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
 # Windows shortcuts
 *.lnk
 
-# =========================
-# Operating System Files
-# =========================
-
+######################
 # OSX
-# =========================
+######################
 
 .DS_Store
 .AppleDouble
 .LSOverride
+.svn
 
 # Thumbnails
 ._*
@@ -45,3 +58,48 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+######################
+# IDEA
+######################
+
+.idea/
+webapps/
+*.iml
+*.ipr
+*.iws
+atlassian-ide-plugin.xml
+
+######################
+# Eclipse
+######################
+ 
+*.pydevproject
+.project
+.metadata
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+ 
+# Locally stored "Eclipse launch configurations"
+*.launch
+ 
+# CDT-specific
+.cproject
+ 
+# PDT-specific
+.buildpath
+
+# Testing environment specific
+derby.log
+
+# virtual machine crash logs
+hs_err_pid*

@@ -10,6 +10,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.apache.log4j.Logger;
 
+/**
+ * Authentication Service
+ *
+ * @author igafurov
+ * @since 01.11.2016
+ */
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService {
 

@@ -13,7 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.apache.log4j.Logger;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,10 +21,14 @@ import java.time.LocalTime;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 
+/**
+ * User controller
+ *
+ * @author igafurov
+ * @since 01.11.2016
+ */
 @Controller
 public class UserController {
-
-    private static final Logger logger = Logger.getLogger(UserController.class);
 
     @Autowired
     private UserService userService;
@@ -38,10 +42,18 @@ public class UserController {
     @RequestMapping(value = "/sign-up", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
-
         return "sign-up";
     }
 
+    /**
+     * Sign-up
+     *
+     * @param userForm      user form
+     * @param bindingResult result to check errors
+     * @param model         model
+     * @param response      standard request
+     * @return redirecting url
+     */
     @RequestMapping(value = "/sign-up", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model, HttpServletResponse response) {
         String userName = userForm.getUsername();
@@ -52,7 +64,7 @@ public class UserController {
             return "sign-up";
         }
         Cookie cookie = new Cookie("cookieName", userName);
-        cookie.setMaxAge(2592000);
+        cookie.setMaxAge(2500000);
         response.addCookie(cookie);
 
         userService.save(userForm);
@@ -60,14 +72,23 @@ public class UserController {
         return "redirect:/welcome";
     }
 
+    /**
+     * Sign-in
+     *
+     * @param model   model
+     * @param logout  logout from application
+     * @param error   error indicator
+     * @param request standard request
+     * @return redirecting url
+     */
     @RequestMapping(value = "/sign-in", method = RequestMethod.GET)
     public String login(Model model, String error, String logout, HttpServletRequest request) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String cookieUserName = null;
-        if(request.getCookies()!=null){
+        if (request.getCookies() != null) {
             Cookie[] requestCookies = request.getCookies();
-            for(Cookie cookie : requestCookies) {
-                if(cookie.getName().equalsIgnoreCase("cookieName")){
+            for (Cookie cookie : requestCookies) {
+                if (cookie.getName().equalsIgnoreCase("cookieName")) {
                     cookieUserName = cookie.getValue();
                 }
             }
@@ -85,6 +106,12 @@ public class UserController {
         return "sign-in";
     }
 
+    /**
+     * Welcome page
+     *
+     * @param model model
+     * @return redirecting url
+     */
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome(Model model) {
 
@@ -99,10 +126,9 @@ public class UserController {
         if (hour.getHour() >= 18 && hour.getHour() < 22) {
             time = "evening";
         }
-        if (hour.getHour() >= 22 && (hour.getHour() < 6 || hour.getHour() > 0)) {
+        if ((hour.getHour() >= 22 && (hour.getHour() < 6) || hour.getHour() >= 0)) {
             time = "night";
         }
-
         String dayTime = "Good " + time;
         model.addAttribute("dayTime", dayTime);
         return "welcome";

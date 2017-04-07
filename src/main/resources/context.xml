@@ -16,13 +16,13 @@
     http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <context:component-scan base-package="com.gafur.welcome.model"/>
-    <context:component-scan base-package="com.gafur.welcome.dao"/>
+    <context:component-scan base-package="com.gafur.welcome.repository"/>
     <context:component-scan base-package="com.gafur.welcome.controller"/>
     <context:component-scan base-package="com.gafur.welcome.serviceImpl"/>
     <context:component-scan base-package="com.gafur.welcome.service"/>
     <context:component-scan base-package="com.gafur.welcome.validator"/>
     <context:property-placeholder location="classpath:jdbc.properties"/>
-    <jpa:repositories base-package="com.gafur.welcome.dao"/>
+    <jpa:repositories base-package="com.gafur.welcome.repository"/>
     <import resource="spring-security.xml"/>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">

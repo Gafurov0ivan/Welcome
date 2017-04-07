@@ -2,9 +2,14 @@ package com.gafur.welcome.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Set;
 
+/**
+ * User entity
+ *
+ * @author igafurov
+ * @since 01.11.2016
+ */
 @Entity
 @Table(name = "person")
 public class User implements Serializable {
@@ -29,15 +34,21 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() { return username; }
+    public String getUsername() {
+        return username;
+    }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getPassword() { return password; }
+    public String getPassword() {
+        return password;
+    }
 
-    public void setPassword(String password) { this.password = password; }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getPasswordConfirm() {
         return passwordConfirm;
@@ -59,5 +70,7 @@ public class User implements Serializable {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) { this.roles = roles; }
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 }

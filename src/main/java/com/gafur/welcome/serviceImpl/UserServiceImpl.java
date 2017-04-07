@@ -1,26 +1,29 @@
 package com.gafur.welcome.serviceImpl;
 
-import com.gafur.welcome.dao.RoleDao;
-import com.gafur.welcome.dao.UserDao;
+import com.gafur.welcome.repository.RoleRepository;
+import com.gafur.welcome.repository.UserRepository;
 import com.gafur.welcome.model.User;
 import com.gafur.welcome.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.apache.log4j.Logger;
 
 import java.util.HashSet;
 
+/**
+ * User Service
+ *
+ * @author igafurov
+ * @since 01.11.2016
+ */
 @Service
 public class UserServiceImpl implements UserService {
 
-    private static final Logger logger = Logger.getLogger(UserServiceImpl.class);
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
-    private UserDao userDao;
-
-    @Autowired
-    private RoleDao roleDao;
+    private RoleRepository roleRepository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -28,20 +31,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(new HashSet<>(roleDao.findAll()));
-        userDao.save(user);
+        user.setRoles(new HashSet<>(roleRepository.findAll()));
+        userRepository.save(user);
     }
 
     @Override
     public User findByUsername(String username) {
-        return userDao.findByUsername(username);
+        return userRepository.findByUsername(username);
     }
 
-    public UserDao getUserDao() {
-        return userDao;
+    public UserRepository getUserRepository() {
+        return userRepository;
     }
 
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 }

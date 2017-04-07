@@ -7,15 +7,18 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import org.apache.log4j.Logger;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * User Validator
+ *
+ * @author igafurov
+ * @since 01.11.2016
+ */
 @Component
 public class UserValidator implements Validator {
-
-    private static final Logger logger = Logger.getLogger(UserValidator.class);
 
     @Autowired
     private UserService userService;
