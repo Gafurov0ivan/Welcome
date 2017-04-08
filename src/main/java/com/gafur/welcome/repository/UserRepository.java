@@ -4,7 +4,7 @@ import com.gafur.welcome.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * User repository
+ * Repository with default operations with user
  *
  * @author igafurov
  * @since 01.11.2016

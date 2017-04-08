@@ -4,7 +4,7 @@ import com.gafur.welcome.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Role repository
+ * Repository with default operations with role
  *
  * @author igafurov
  * @since 01.11.2016

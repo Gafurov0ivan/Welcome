@@ -1,7 +1,7 @@
 package com.gafur.welcome.service;
 
 /**
- * Authentication service
+ * User authentication
  *
  * @author igafurov
  * @since 01.11.2016

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 
 /**
- * User Service
+ * Manage operations with user
  *
  * @author igafurov
  * @since 01.11.2016

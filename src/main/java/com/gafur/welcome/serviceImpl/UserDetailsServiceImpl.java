@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * User details Service
+ * Details operations with user
  *
  * @author igafurov
  * @since 01.11.2016

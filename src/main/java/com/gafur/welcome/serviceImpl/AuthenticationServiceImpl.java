@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.apache.log4j.Logger;
 
 /**
- * Authentication Service
+ * Manage user authentication
  *
  * @author igafurov
  * @since 01.11.2016

@@ -3,7 +3,7 @@ package com.gafur.welcome.service;
 import com.gafur.welcome.model.User;
 
 /**
- * User service
+ * Operations with user
  *
  * @author igafurov
  * @since 01.11.2016

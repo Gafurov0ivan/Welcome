@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * User Validator
+ * Validate user login and password
  *
  * @author igafurov
  * @since 01.11.2016

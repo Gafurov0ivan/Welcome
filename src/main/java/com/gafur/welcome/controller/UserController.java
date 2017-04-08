@@ -22,7 +22,7 @@ import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 
 /**
- * User controller
+ * Main controller to manage all operations
  *
  * @author igafurov
  * @since 01.11.2016
@@ -46,13 +46,13 @@ public class UserController {
     }
 
     /**
-     * Sign-up
+     * Control user registration operations
      *
      * @param userForm      user form
      * @param bindingResult result to check errors
      * @param model         model
      * @param response      standard request
-     * @return redirecting url
+     * @return redirecting to url
      */
     @RequestMapping(value = "/sign-up", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model, HttpServletResponse response) {
@@ -73,7 +73,7 @@ public class UserController {
     }
 
     /**
-     * Sign-in
+     * Control user authentication and authorisation operations
      *
      * @param model   model
      * @param logout  logout from application
@@ -107,7 +107,7 @@ public class UserController {
     }
 
     /**
-     * Welcome page
+     * Redirect url and set a welcome message
      *
      * @param model model
      * @return redirecting url
