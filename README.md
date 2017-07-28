@@ -1,4 +1,4 @@
-https://travis-ci.org/Gafurov0ivan/Welcome.svg?branch=master
+[![Build Status](https://travis-ci.org/Gafurov0ivan/Welcome.svg?branch=master)](https://travis-ci.org/Gafurov0ivan/Welcome)
 
 Test task for company
 
