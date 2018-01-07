@@ -52,7 +52,7 @@ public class UserController {
      * @param bindingResult result to check errors
      * @param model         model
      * @param response      standard request
-     * @return redirecting to url
+     * @return redirecting to welcome url
      */
     @RequestMapping(value = "/sign-up", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model, HttpServletResponse response) {
